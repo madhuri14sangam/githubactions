@@ -4,7 +4,11 @@ jobs:
   jobs-1:
     runs-on: ubuntu-24.04
     steps:
-      - name: write a msg
-        run: echo "my first msg in github actions"
-      - name: write another msg
-        run: echo "my second msg in github actions"
+      - name: checkout
+        uses: actions/checkout@v7
+      - name: install independencies
+        run:  npm install
+      - name: test
+        run: npm test
+      - name: starting the app
+        run: echo "your app running on port 3000"
